@@ -11,7 +11,18 @@ def client():
 
 def test_predict(client):
     """Function testing predict method"""
-    response = client.post("/predict", json={"features": [63, 1, 3, 145, 233, 1, 0, 150, 0, 2.3, 0, 0, 1]})
+    response = client.post("/predict", json={"features": [
+        63, 
+        1, 
+        3, 
+        145,
+        233, 
+        1, 
+        0, 
+        2.3, 
+        0,0, 
+        1
+    ]})
     assert response.status_code == 200
     assert "prediction" in response.get_json()
 
