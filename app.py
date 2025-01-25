@@ -4,7 +4,7 @@ import pickle
 from flask import Flask, request, jsonify
 
 # Load the model
-with open("model.pkl", "rb") as f:
+with open("heart_disease_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 app = Flask(__name__)
