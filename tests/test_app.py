@@ -3,8 +3,8 @@
 import pytest
 from app import app
 
-@pytest.fixture
-def client():
+@pytest.fixture(name="client")
+def client_fixture():
     """Function exposing test client"""
     with app.test_client() as testclient:
         yield testclient
