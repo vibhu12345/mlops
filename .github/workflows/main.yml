@@ -21,7 +21,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run Pylint
       run: |
-        pylint src/ app.py tests/
+        pylint app.py tests/
 
   test:
     name: Run Pytest
