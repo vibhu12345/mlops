@@ -11,9 +11,17 @@ jobs:
     name: Save Model and Upload Artifacts
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.15
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
       - name: Train the model with the training data and save the best model
         run: python train.py
-        
+
       - name: Store trained model
         uses: actions/upload-artifact@v4
         with:
