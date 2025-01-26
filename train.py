@@ -7,7 +7,7 @@ import pickle
 import optuna
 
 # Load the dataset downloaded from https://raw.githubusercontent.com/dataprofessor/data/master/heart-disease-cleveland.csv
-path = "heart-disease-cleveland.csv" 
+path = "https://raw.githubusercontent.com/dataprofessor/data/master/heart-disease-cleveland.csv" 
 data = pd.read_csv(path)
 
 # Data Preprocessing
