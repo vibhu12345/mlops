@@ -7,6 +7,18 @@ on:
   pull_request:
 
 jobs:
+  saveModel:
+    name: Save Model and Upload Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Train the model with the training data and save the best model
+        run: python train.py
+        
+      - name: Store trained model
+        uses: actions/upload-artifact@v4
+        with:
+          name: trained-model
+          path: models/
   lint:
     name: Lint Code with Pylint
     runs-on: ubuntu-latest
