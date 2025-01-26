@@ -56,7 +56,7 @@ model = LogisticRegression(C=best_params['C'], solver=best_params['solver'], ran
 model.fit(X_train, y_train)
 
 #Save the best model
-with open('heart_disease_model.pkl', 'wb') as f:
+with open('models/heart_disease_model.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 print("\nModel saved as 'heart_disease_model.pkl'")
