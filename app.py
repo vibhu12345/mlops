@@ -1,18 +1,20 @@
+"""Module providing api endpoint for using model"""
+
 import pickle
 from flask import Flask, request, jsonify
 
 # Load the model
-with open("model.pkl", "rb") as f:
+with open("heart_disease_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 app = Flask(__name__)
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    """Function predicting diagnosis"""
     data = request.get_json()
     if not data or "features" not in data:
         return jsonify({"error": "Invalid input"}), 400
-    
     features = data["features"]
     prediction = model.predict([features])
     return jsonify({"prediction": int(prediction[0])})
