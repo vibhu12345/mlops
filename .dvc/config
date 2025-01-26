@@ -1,4 +1,4 @@
 [core]
     remote = dvcremote
 ['remote "dvcremote"']
-    url = /dvc/storage
+    url = ../dvcRepository/storage
