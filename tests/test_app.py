@@ -19,9 +19,12 @@ def test_predict(client):
         233,
         1,
         0,
-        2.3,
-        0,0,
-        1
+        150,
+        0,
+        2.1,
+        3,
+        0.0,
+        3.0
     ]})
     assert response.status_code == 200
     assert "prediction" in response.get_json()
